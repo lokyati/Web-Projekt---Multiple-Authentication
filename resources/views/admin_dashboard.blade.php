@@ -5,10 +5,10 @@
         <div class="row justify-content-center">
             <div class="col-md-8">
                 <div class="card">
-                    <div class="card-header">Dashboard</div>
+                    <div class="card-header">Admin Vezérlőpúlt!</div>
 
                     <div class="card-body">
-                        Hi boss!
+                        Admin számára fontos adatok.
                     </div>
                 </div>
             </div>

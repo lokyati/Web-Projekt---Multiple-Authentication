@@ -2,17 +2,23 @@
     Route::view('/', 'welcome');
     Auth::routes();
 
-    Route::get('/login/admin', 'Auth\LoginController@showAdminLoginForm');
-    Route::get('/login/writer', 'Auth\LoginController@showWriterLoginForm');
-    Route::get('/register/admin', 'Auth\RegisterController@showAdminRegisterForm');
-    Route::get('/register/writer', 'Auth\RegisterController@showWriterRegisterForm');
+//Admin Authentication Routes
+Route::prefix('admin')->group(function() {
+    Route::get('/login', 'Auth\LoginController@showAdminLoginForm');
+    Route::post('/login', 'Auth\LoginController@adminLogin');
+    Route::get('/register', 'Auth\RegisterController@showAdminRegisterForm');
+    Route::post('/register', 'Auth\RegisterController@createAdmin');
+    Route::get('/', 'AdminController@index')->name('admin.dashboard');
+});
 
-    Route::post('/login/admin', 'Auth\LoginController@adminLogin');
-    Route::post('/login/writer', 'Auth\LoginController@writerLogin');
-    Route::post('/register/admin', 'Auth\RegisterController@createAdmin');
-    Route::post('/register/writer', 'Auth\RegisterController@createWriter');
+//Writer Authentication Routes
+Route::prefix('writer')->group(function() {
+    Route::get('/login', 'Auth\LoginController@showWriterLoginForm');
+    Route::post('/login', 'Auth\LoginController@writerLogin');
+    Route::get('/register', 'Auth\RegisterController@showWriterRegisterForm');
+    Route::post('/register', 'Auth\RegisterController@createWriter');
+    Route::get('/', 'WriterController@index')->name('writer.dashboard');
+});
 
-    Route::view('/home', 'home')->middleware('auth');
-    Route::view('/admin', 'admin');
-    Route::view('/writer', 'writer');
-	Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/home', 'HomeController@index')->name('home');
+Route::view('/home', 'home')->middleware('auth');

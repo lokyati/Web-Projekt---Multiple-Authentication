@@ -69,16 +69,16 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    Web Projekt - Multiple Authentication 
+                    Multiple Authentication 
                 </div>
 
                 <div class="links">
-                    <a href="http://localhost/multi-auth/public/login/admin">Admin-Login</a>
-                    <a href="http://localhost/multi-auth/public/register/admin">Admin-Register</a>
-                    <a href="http://localhost/multi-auth/public/login/writer">Writer-Login</a>
-                    <a href="http://localhost/multi-auth/public/register/writer">Writer-Register</a>
-                    <a href="http://localhost/multi-auth/public/login">User-Login</a>
-                    <a href="http://localhost/multi-auth/public/register">User-Register</a>
+                    <a href="http://localhost/multi-auth/public/admin/login">Admin Belépés</a>
+                    <a href="http://localhost/multi-auth/public/admin/register">Admin Regisztráció</a>
+                    <a href="http://localhost/multi-auth/public/writer/login">Iró Belépés</a>
+                    <a href="http://localhost/multi-auth/public/writer/register/">Iró Regisztráció</a>
+                    <a href="http://localhost/multi-auth/public/login">Felhasználó Belépés</a>
+                    <a href="http://localhost/multi-auth/public/register">Felhasználó Regisztráció</a>
                 </div>
             </div>
         </div>

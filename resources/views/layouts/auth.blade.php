@@ -42,14 +42,25 @@
                             <!-- Authentication Links -->
                            <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                    Hi There <span class="caret"></span>
+                                    Üdv  <span class="caret"></span>
+                                    @if (Auth::guard('admin')->check())
+                                            Admin!
+                                    @endif
+
+                                    @if (Auth::guard('writer')->check())
+                                            Iró!
+                                    @endif
+
+                                    @if (Auth::guard('web')->check())
+                                            Olvasó!
+                                    @endif
                                 </a>
 
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
-                                        {{ __('Logout') }}
+                                        {{ __('Kijelentkezés') }}
                                     </a>
 
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
